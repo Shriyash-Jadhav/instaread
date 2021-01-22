@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no user-scalable=no">
+    <title>Instaread</title>
+    <link rel="icon" type="image/x-icon" href="https://instaread.co/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="https://instaread.co/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" type="text/css" href="instaread.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-N5F2J5Q');
+    </script>
+    <script type="text/javascript">
+        (function(e, a) {
+            if (!a.__SV) {
+                var b = window;
+                try {
+                    var c, l, i, j = b.location,
+                        g = j.hash;
+                    c = function(a, b) {
+                        return (l = a.match(RegExp(b + "=([^&]*)"))) ? l[1] : null
+                    };
+                    g && c(g, "state") && (i = JSON.parse(decodeURIComponent(c(g, "state"))), "mpeditor" === i.action && (b.sessionStorage.setItem("_mpcehash", g), history.replaceState(i.desiredHash || "", e.title, j.pathname + j.search)))
+                } catch (m) {}
+                var k, h;
+                window.mixpanel = a;
+                a._i = [];
+                a.init = function(b, c, f) {
+                    function e(b, a) {
+                        var c = a.split(".");
+                        2 == c.length && (b = b[c[0]], a = c[1]);
+                        b[a] = function() {
+                            b.push([a].concat(Array.prototype.slice.call(arguments,
+                                0)))
+                        }
+                    }
+                    var d = a;
+                    "undefined" !== typeof f ? d = a[f] = [] : f = "mixpanel";
+                    d.people = d.people || [];
+                    d.toString = function(b) {
+                        var a = "mixpanel";
+                        "mixpanel" !== f && (a += "." + f);
+                        b || (a += " (stub)");
+                        return a
+                    };
+                    d.people.toString = function() {
+                        return d.toString(1) + ".people (stub)"
+                    };
+                    k = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+                    for (h = 0; h < k.length; h++) e(d, k[h]);
+                    a._i.push([b, c, f])
+                };
+                a.__SV = 1.2;
+                b = e.createElement("script");
+                b.type = "text/javascript";
+                b.async = !0;
+                b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === e.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+                c = e.getElementsByTagName("script")[0];
+                c.parentNode.insertBefore(b, c)
+            }
+        })(document, window.mixpanel || []);
+        mixpanel.init("a1f6bbf32a33b92b36237efd6b641d1c");
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76414378-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-76414378-2');
+    </script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script src="https://instaread.co/js/instaread.js?version=1.1.202101190907">
+    </script>
+    <script>
+    </script>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5F2J5Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+</head>
+
+<body>
+    <header>
+        <div id="topNavVariant">
+            <div class="navMaxWidth">
+                <div id="topNavRightVariant" class="clear-margin-top">
+                    <span class="menu-item desktop-inline-block">
+                                    <a class="nounderline" href="#">Discover</a>
+                                </span>
+                    <span class="menu-item mobile-inline-block">
+                                    <a href="#"><i class="material-icons">apps</i></a>
+                                </span>
+                    <span class="menu-item desktop-inline-block">
+                                    <a href="#" class="nounderline">Search</a>
+                                </span>
+                    <span class="menu-item mobile-inline-block">
+                                    <a href="#"><i class="material-icons">search</i></a>
+                                </span>
+                    <span class="menu-item desktop-inline-block clear-margin-top">
+                                    <a class="nounderline display_try_for_free_modal" style="color:#0085e6">Try Instaread</a>
+                                </span>
+                    <span class="menu-item mobile-inline-block clear-margin-top">
+                                    <a class="nounderline display_try_for_free_modal" style="color:#0085e6"><i class="material-icons">local_library</i></a>
+                                </span>
+                    <span class="desktop-inline-block clear-margin-top">
+                                    <a href="#" class="nounderline">Login</a>
+                                </span>
+                    <span class="mobile-inline-block clear-margin-top">
+                                    <a href="#" class="nounderline"><i class="material-icons">perm_identity</i></a>
+                                </span>
+                </div>
+
+                <div id="topNavLeftVariant" class="clear-margin-top">
+                    <a href="#">
+                        <img src="https://instaread.co/images/instaread_logo_grey.svg" alt="Instaread Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="hosted_content" class="clear-margin-top">
+        <div class="hosted_content_row hero_colored_background">
+            <div id="heros">
+                <div id="hero_middle" class="smallcolumn">
+                    <h1 class="home-h1-hero">
+                        <div class="rw-words">
+                            <span>Stay Curious</span>
+                            <span>Get Smarter</span>
+                            <span>Be Entertained</span>
+                            <span>Find Inspiration</span>
+                            <span>Save Time</span>
+                            <span>Stay Curious</span>
+                        </div>
+                    </h1>
+                    <p class="large-margin-top home-p-hero">Enjoy access to bestselling book summaries and premium content from our partners, all available in 15-minute audio or text segments.</p>
+                    <button class="display_modal large-margin-top">Try Instaread</button>
+                </div>
+                <div id="hero_left">
+                    <div class="hero_left_background">
+                        <div class="zebra_foreground hero_left_foreground_laptop">
+
+                        </div>
+                        <div class="zebra_foreground hero_left_foreground_smartphone">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="hero_right">
+                    <div class="hero_coffee_background">
+                    </div>
+                    <div class="hero_plant_background">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hosted_content_row hide_on_desktop" style="margin-top: 1rem;">
+            <div class="hosted_content">
+                <div id="zebra_mobile_iphonex" class="zebra_background_mobile_phone">
+                    <div class="zebra_foreground zebra_foreground_mobile_iphonex">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hosted_content_row">
+            <div class="hosted_content">
+                <div class="centered" id="benefit_blocks">
+                    <div class="benefit_block">
+                        <img src="https://instaread.co/images/get_smarter.jpg" alt="Get Smarter">
+                        <h2>Get Smarter</h2>
+                        <p>Instantly unlock the knowledge contained in the world's best books.</p>
+                    </div>
+                    <div class="benefit_spacer clear-margin-top"></div>
+                    <div class="benefit_block">
+                        <img src="https://instaread.co/images/find_inspiration.jpg" alt="Find Inspiration">
+                        <h2>Find Inspiration</h2>
+                        <p>Get the best ideas from leading business mavericks, health gurus, political pundits, and trailblazing scientists.</p>
+                    </div>
+                    <div class="benefit_spacer clear-margin-top"></div>
+                    <div class="benefit_block">
+                        <img src="https://instaread.co/images/on_the_go.jpg" alt="On the Go">
+                        <h2>On the Go</h2>
+                        <p>Eyes on the road? Hands on the barbells? No problem: all Instareads are converted to audio for your listening pleasure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hosted_content_row">
+            <div id="zebra_section" class="hosted_content">
+                <div id="zebra_desktop" class="zebra_background">
+                    <div class="zebra_foreground zebra_foreground_iphonex">
+                        <img class="book_cover_image" src="https://d1cm35kbp068hs.cloudfront.net/wu60ia8ymm/cover.jpg" alt='Book Cover for "Rest"'>
+                        <div class="book_cover_overlay">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="zebra_text clear-margin-top" style="float: left; max-width: 40rem;">
+                    <h1 style="font-weight:300;"><strong>Available in audio & text formats.</strong></h1>
+                </div>
+            </div>
+        </div>
+        <div class="hosted_content_row hide-on_desktop">
+            <div id="zebra_section" class="hosted_content" style="padding: 0;">
+                <div id="zebra" class="zebra_background_mobile" style="margin-bottom: 4rem;">
+                    <div class="zebra_foreground zebra_foreground_dual_screen">
+                        <img class="book_cover_image" src="https://d1cm35kbp068hs.cloudfront.net/wu60ia8ymm/cover.jpg" alt='Book Cover for "Rest"'>
+                        <div class="book_cover_overlay">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hosted_content_row">
+            <div id="zebra_section" class="hosted_content">
+                <div id="zebra_home_device_desktop" class="zebra_home_device_background">
+                    <div class="zebra_foreground zebra_foreground_desktop">
+                        <img class="book_cover_image" src="https://d1cm35kbp068hs.cloudfront.net/he72xxcgr9/cover.jpg" alt='Book Cover for "The Carnivore Code"'>
+                        <div class="book_cover_overlay">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                    <div class="zebra_foreground zebra_foreground_iphonex_2">
+                        <img class="book_cover_image" src="https://d1cm35kbp068hs.cloudfront.net/u71xxrlrqn/cover.jpg" alt='Book Cover for "Post Corona"'>
+                        <div class="book_cover_overlay">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="zebra_text clear-margin-top" style="float: left; max-width: 50rem;">
+                    <h1 style="font-weight:300;"><strong>Mobile, tablet, and desktop.</strong> Unlimited access on desktop, android-optimized mobile-web-app or iOS app.</h1>
+                </div>
+                <button class="display_modal large-margin-top" style="order:1; margin:auto;">Try Instaread</button>
+            </div>
+        </div>
+        <div class="hosted_content_row" style="margin-top: 5rem;">
+            <div class="hosted_content centered hide-overflow-x">
+                <h1 class="books_welcome_text"><strong>More than 1,000 titles.</strong> Let us guide you through the world's wisdom.</h1>
+                <br>
+                <div class="books_container" class="loadableContainer">
+                    <div class="book_container">
+                        <div class="book_cover">
+                            <img class="book_thumbnail_image" src="https://d1cm35kbp068hs.cloudfront.net/2tb4d34qmj/thumbnail.jpg" alt='Book Cover for "The Ethical Slut"'>
+                            <div class="book_thumbnail_overlay">
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                        <div class="book_title truncate-text clear-margin-top"><a class="nounderline" href="#">The Ethical Slut</a></div>
+                        <div class="book_author truncate-text clear-margin-top"><a class="nounderline" href="#">Janet W. Hardy and Dossie Easton</a></div>
+                    </div>
+                    <div class="book_container">
+                        <div class="book_cover">
+                            <img class="book_thumbnail_image" src="https://d1cm35kbp068hs.cloudfront.net/blwjy79kjq/thumbnail.jpg" alt='Book Cover for "Profit First"'>
+                            <div class="book_thumbnail_overlay">
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                        <div class="book_title truncate-text clear-margin-top"><a class="nounderline" href="#">Profit First</a></div>
+                        <div class="book_author truncate-text clear-margin-top"><a class="nounderline" href="#">Mike Michalowicz</a></div>
+                    </div>
+                    <div class="book_container">
+                        <div class="book_cover">
+                            <img class="book_thumbnail_image" src="https://d1cm35kbp068hs.cloudfront.net/60r6fjw245/thumbnail.jpg" alt='Book Cover for "How to Talk to Anyone"'>
+                            <div class="book_thumbnail_overlay">
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                        <div class="book_title truncate-text clear-margin-top"><a class="nounderline" href="#">How to Talk to Anyone</a></div>
+                        <div class="book_author truncate-text clear-margin-top"><a class="nounderline" href="#">Leil Lowndes</a></div>
+                    </div>
+                    <div class="book_container">
+                        <div class="book_cover">
+                            <img class="book_thumbnail_image" src="https://d1cm35kbp068hs.cloudfront.net/fnrx47e93u/thumbnail.jpg" alt='Book Cover for "The 8th Habit"'>
+                            <div class="book_thumbnail_overlay">
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                        <div class="book_title truncate-text clear-margin-top"><a class="nounderline" href="#">The 8th Habit</a></div>
+                        <div class="book_author truncate-text clear-margin-top"><a class="nounderline" href="#">Stephen R. Covey</a></div>
+                    </div>
+                    <div class="book_container">
+                        <div class="book_cover">
+                            <img class="book_thumbnail_image" src="https://d1cm35kbp068hs.cloudfront.net/82wd9t8ow0/thumbnail.jpg" alt='Book Cover for "Rich Dad Poor Dad"'>
+                            <div class="book_thumbnail_overlay">
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                        <div class="book_title truncate-text clear-margin-top"><a class="nounderline" href="#">Rich Dad Poor Dad</a></div>
+                        <div class="book_author truncate-text clear-margin-top"><a class="nounderline" href="#">Robert T. Kiyosaki</a></div>
+                    </div>
+                    <div class="book_container">
+                        <div class="book_cover">
+                            <img class="book_thumbnail_image" src="https://d1cm35kbp068hs.cloudfront.net/459hqsvkcb/thumbnail.jpg" alt='Book Cover for "How to Lead"'>
+                            <div class="book_thumbnail_overlay">
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                        <div class="book_title truncate-text clear-margin-top"><a class="nounderline" href="#">How to Lead</a></div>
+                        <div class="book_author truncate-text clear-margin-top"><a class="nounderline" href="#">Dave Rubenstein</a></div>
+                    </div>
+                    <div class="book_container">
+                        <div class="book_cover">
+                            <img class="book_thumbnail_image" src="https://d1cm35kbp068hs.cloudfront.net/t6yso21r29/thumbnail.jpg" alt='Book Cover for "Your Next Five Moves"'>
+                            <div class="book_thumbnail_overlay">
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                        <div class="book_title truncate-text clear-margin-top"><a class="nounderline" href="#">Your Next Five Moves</a></div>
+                        <div class="book_author truncate-text clear-margin-top"><a class="nounderline" href="#">Patrick Bet-David</a></div>
+                    </div>
+                    <div class="book_container">
+                        <div class="book_cover">
+                            <img class="book_thumbnail_image" src="https://d1cm35kbp068hs.cloudfront.net/1wyq6qnb46/thumbnail.jpg" alt='Book Cover for "Never Chase Men Again"'>
+                            <div class="book_thumbnail_overlay">
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                        <div class="book_title truncate-text clear-margin-top"><a class="nounderline" href="#">Never Chase Men Again</a></div>
+                        <div class="book_author truncate-text clear-margin-top"><a class="nounderline" href="#">Bruce Bryans</a></div>
+                    </div>
+                    <div class="book_container">
+                        <div class="book_cover">
+                            <img class="book_thumbnail_image" src="https://d1cm35kbp068hs.cloudfront.net/qfidgm63nm/thumbnail.jpg" alt='Book Cover for "The Way of the Superior Man"'>
+                            <div class="book_thumbnail_overlay">
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                        <div class="book_title truncate-text clear-margin-top"><a class="nounderline" href="#">The Way of the Superior Man</a></div>
+                        <div class="book_author truncate-text clear-margin-top"><a class="nounderline" href="#">David Deida</a></div>
+                    </div>
+                    <div class="book_container">
+                        <div class="book_cover">
+                            <img class="book_thumbnail_image" src="https://d1cm35kbp068hs.cloudfront.net/an43ma22e7/thumbnail.jpg" alt='Book Cover for "Burnout"'>
+                            <div class="book_thumbnail_overlay">
+                                <a href="#"></a>
+                            </div>
+                        </div>
+                        <div class="book_title truncate-text clear-margin-top"><a class="nounderline" href="#">Burnout</a></div>
+                        <div class="book_author truncate-text clear-margin-top"><a class="nounderline" href="#">Emily Nagoski and Amelia Nagoski</a></div>
+                    </div>
+                </div>
+                <br>
+                <button class="display_modal">Try Instaread</button>
+                <br>
+            </div>
+        </div>
+        <div class="hosted_content_row">
+            <div class="hosted_content categories_margin">
+                <h1 class="books_welcome_text"><strong>Categories.</strong> A broad range of categories from which to choose.</h1>
+                <div class="centered" id="benefit_blocks">
+                    <div class="block">
+                        <img src="https://instaread.co/images/business_economics.png" alt="Business & Economics">
+                        <h2>Business & Economics</h2>
+                        <p class="hide_on_mobile">Cash in on advice from finance experts and entrepreneurs.</p>
+                        <a href="#" class="explore">Explore <i class="material-icons" style="padding-left:0.25rem;">arrow_forward</i></a>
+                    </div>
+                    <div class="benefit_spacer clear-margin-top"></div>
+                    <div class="block">
+                        <img src="https://instaread.co/images/politics.png" alt="Politics">
+                        <h2>Politics</h2>
+                        <p class="hide_on_mobile">Get the lowdown on gossip from the Beltway and beyond.</p>
+                        <a href="#" class="explore">Explore <i class="material-icons" style="padding-left:0.25rem;">arrow_forward</i></a>
+                    </div>
+                    <div class="benefit_spacer clear-margin-top"></div>
+                    <div class="block">
+                        <img src="https://instaread.co/images/social_sciences.png" alt="Social Sciences">
+                        <h2>Social Sciences</h2>
+                        <p class="hide_on_mobile">Understanding human behavior has never been easier.</p>
+                        <a href="#" class="explore">Explore <i class="material-icons" style="padding-left:0.25rem;">arrow_forward</i></a>
+                    </div>
+                </div>
+                <div class="benefit_horizontal_spacer"></div>
+                <div class="centered" id="benefit_blocks">
+                    <div class="block">
+                        <img src="https://instaread.co/images/self_help.png" alt="Self Help">
+                        <h2>Self Help</h2>
+                        <p class="hide_on_mobile">Trying to get out of a rut? We'll show you the fast track.</p>
+                        <a href="#" class="explore">Explore <i class="material-icons" style="padding-left:0.25rem;">arrow_forward</i></a>
+                    </div>
+                    <div class="benefit_spacer clear-margin-top"></div>
+                    <div class="block">
+                        <img src="https://instaread.co/images/history.png" alt="History">
+                        <h2>History</h2>
+                        <p class="hide_on_mobile">Skip the dusty stacks: we have the highlights.</p>
+                        <a href="#" class="explore">Explore <i class="material-icons" style="padding-left:0.25rem;">arrow_forward</i></a>
+                    </div>
+                    <div class="benefit_spacer clear-margin-top"></div>
+                    <div class="block">
+                        <img src="https://instaread.co/images/health_fitness.png" alt="Health & Fitness">
+                        <h2>Health & Fitness</h2>
+                        <p class="hide_on_mobile">Check out these tips for living longer and better.</p>
+                        <a href="#" class="explore">Explore <i class="material-icons" style="padding-left:0.25rem;">arrow_forward</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hosted_content_row hero_colored_background_alternate" style="margin-top:3rem;">
+            <div id="featured_gallery">
+                <img alt="As featured on Forbes" src="https://instaread.co/images/featured_forbes.svg">
+                <img alt="As featured on CNet" src="https://instaread.co/images/featured_cnet.svg">
+                <img alt="As featured on Mashable" src="https://instaread.co/images/featured_mashable.svg">
+                <img alt="As featured on The Next Web" src="https://instaread.co/images/featured_tnw.svg">
+            </div>
+        </div>
+        <div class="hosted_content_row hide_on_mobile">
+            <div class="hosted_content" style="overflow: visible; position: relative; margin-top:2rem; max-width: 86rem;">
+                <h1 class="books_welcome_text_wide"><strong>Used by millions.</strong> People love Instaread.</h1>
+                <div class="centered" id="review_blocks">
+                    <button id="review_rotate" class="review_rotate review_rotate_left" style="padding-right: 1rem;" onclick="rotateReviewsLeft()">
+                        <div class="circle_block">
+                            <div class="circular_button"></div>
+                            <i id="chevron_icon" class="material-icons clear-margin-top">chevron_left</i>
+                        </div>
+                    </button>
+                    <button id="review_rotate" class="review_rotate review_rotate_right" style="padding-left: 1rem;" onclick="rotateReviewsRight()">
+                        <div class="circle_block">
+                            <div class="circular_button"></div>
+                            <i id="chevron_icon" class="material-icons clear-margin-top">chevron_right</i>
+                        </div>
+                    </button>
+                    <div class="reviewer_spacer clear-margin-top" style="order: 2;"></div>
+                    <div class="reviewer_spacer clear-margin-top" style="order: 4;"></div>
+                </div>
+                <script>
+                    var userReviews = {
+                        "reviews": [{
+                            "reviewer": "bryantilos",
+                            "text": "This app is very easy to use and helpful to listen to the takeaways. Great for on-the-go while driving in your car or a long train/bus ride :). Highly recommend!"
+                        }, {
+                            "reviewer": "All I wanted was storage",
+                            "text": "Extracting the essence of a book, makes reading fast and easy. Learning is fun and and even easier to understand then the actual book at times. Recommended for those who have a lot of unread books lying around like I do because of a busy lifestyle."
+                        }, {
+                            "reviewer": "Mikester1983",
+                            "text": "I love staying on top of the best business reads but don't have the time or money to buy and read the actual books. I had no idea Instaread existed till a friend told me about it. It's been a month and I've read more books in Instaread than I have in the past year the 'old' way. My only feedback is that I want MORE books!!!"
+                        }, {
+                            "reviewer": "zubinmo",
+                            "text": "This has been the most engrossing app to date. This could change the way we learn â the access to insight is overwhelming!"
+                        }, {
+                            "reviewer": "Sergey Levchuk",
+                            "text": "I love it so much!"
+                        }, {
+                            "reviewer": "Nicky Beaird",
+                            "text": "Easy, simple, beautiful. Leaders Digest."
+                        }, {
+                            "reviewer": "Mohtar",
+                            "text": "This is the most beneficial knowledgable app ever."
+                        }, {
+                            "reviewer": "pkmaurer",
+                            "text": "Impressive variety of books to choose from! Each selection provides the reader with a thorough overview, highlighting the key takeaways the book provides. Great app for anyone that loves to read!"
+                        }, {
+                            "reviewer": "Alexmarlowe",
+                            "text": "This is a great way to learn more every day."
+                        }, {
+                            "reviewer": "jworley",
+                            "text": "The application is spot on. I recommend it to everyone who wants to maximize their \"readingtime\". You can't go wrong in subscribing to their service."
+                        }, {
+                            "reviewer": "Dennis7X",
+                            "text": "This is the killer app for your smartphone and your life. With a deep and growing library of instantly available books (both new and old), one is both enabled and empowered to engage with the best thing about being human, learning to be the best you that you can be."
+                        }]
+                    };
+                    var orderArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].sort(function() {
+                        return .5 - Math.random();
+                    });
+
+                    initializeReviewElements(userReviews);
+
+                    function initializeReviewElements(json_reviews) {
+                        var i;
+                        var reviewParentDiv = document.getElementById('review_blocks');
+                        for (i = 0; i < 3; i++) {
+                            var reviewBlockDiv = createReviewBlockElement(json_reviews["reviews"][orderArray[i]]);
+                            reviewBlockDiv.id = orderArray[i].toString();
+                            reviewBlockDiv.style.order = (i * 2).toString();
+                            reviewParentDiv.appendChild(reviewBlockDiv);
+                        };
+                    };
+
+                    function createReviewBlockElement(review) {
+                        var textElement = document.createElement('p');
+                        textElement.style.textAlign = "left";
+                        textElement.innerHTML = "\"" + review["text"] + "\"";
+
+                        var reviewerElement = document.createElement('div');
+                        reviewerElement.className = "reviewer";
+                        reviewerElement.innerHTML = "- " + review["reviewer"];
+
+                        var reviewBlockDiv = document.createElement('div');
+                        reviewBlockDiv.className = "benefit_block";
+                        reviewBlockDiv.appendChild(textElement);
+                        reviewBlockDiv.appendChild(reviewerElement);
+                        return reviewBlockDiv;
+                    };
+
+                    function rotateReviewsLeft() {
+                        var reviewParentDiv = document.getElementById('review_blocks');
+
+                        //Remove review on far right
+                        reviewParentDiv.removeChild(document.getElementById(orderArray[2].toString()));
+
+                        //Update order of current reviews
+                        var reviewBlockChild = document.getElementById(orderArray[0].toString());
+                        reviewBlockChild.style.order = "3";
+                        var reviewBlockChild = document.getElementById(orderArray[1].toString());
+                        reviewBlockChild.style.order = "5";
+
+                        //Rotate array to simulate rotating reviews, then add the new review and place on far left
+                        rotateArray(orderArray, true);
+                        var newReviewBlock = createReviewBlockElement(userReviews["reviews"][orderArray[0]]);
+                        newReviewBlock.id = orderArray[0].toString();
+                        newReviewBlock.style.order = "1";
+                        reviewParentDiv.appendChild(newReviewBlock);
+                    };
+
+                    function rotateReviewsRight() {
+                        var reviewParentDiv = document.getElementById('review_blocks');
+
+                        //Remove review on far left
+                        reviewParentDiv.removeChild(document.getElementById(orderArray[0].toString()));
+
+                        //Update order of current reviews
+                        var reviewBlockChild = document.getElementById(orderArray[1].toString());
+                        reviewBlockChild.style.order = "1";
+                        var reviewBlockChild = document.getElementById(orderArray[2].toString());
+                        reviewBlockChild.style.order = "3";
+
+                        //Rotate array to simulate rotating reviews, then add the new review and place on far left
+                        rotateArray(orderArray, false);
+                        var newReviewBlock = createReviewBlockElement(userReviews["reviews"][orderArray[2]]);
+                        newReviewBlock.id = orderArray[2].toString();
+                        newReviewBlock.style.order = "5";
+                        reviewParentDiv.appendChild(newReviewBlock);
+                    };
+
+                    function rotateArray(arr, reverse) {
+                        if (reverse)
+                            arr.unshift(arr.pop());
+                        else
+                            arr.push(arr.shift());
+                        return arr;
+                    };
+                </script>
+            </div>
+        </div>
+
+        <div class="hosted_content_row hide_on_desktop">
+            <div class="hosted_content" style="overflow: visible; position: relative; margin-top:2rem;">
+                <h1 class="books_welcome_text_wide"><strong>Used by millions.</strong> People love Instaread.</h1>
+                <i class="material-icons quote_icon">format_quote</i>
+                <div class="centered" id="review_blocks_mobile">
+                </div>
+                <div id="review_circles" class="mobile_review_circles">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="hosted_content_row hide_on_mobile">
+            <div class="hosted_content">
+                <!-- <img src="images/get-started.png" style="float: left; width: 5%;"> -->
+                <div class="welcome_text_small"><strong>Get Started.</strong> Instaread is a special place on the planet where you can learn.</div>
+                <button class="display_modal" style="float:right; margin-right:2rem;">Try Instaread</button>
+            </div>
+        </div>
+
+
+
+        <div id="footer-wrapper">
+            <footer>
+
+                <div class="footer-left">
+                    <div>
+                        <h2>Get Smarter in Minutes.</h2>
+                        <p>Through audio & text formats.</p>
+                    </div>
+                    <div class="copyright-desktop">
+                        <div class="footer-terms">
+                            <a class="nounderline" href="" target="_blank">Terms of Service</a>&nbsp&nbsp|&nbsp&nbsp<a class="nounderline" href="" target="_blank">Privacy Policy</a>
+                        </div>
+                        <span id="contact_copyright">© Instaread 2020. All rights reserved</span>
+                    </div>
+                </div>
+                <div class="footer-center">
+                    <h4>Categories</h4>
+                    <div class="footer-list">
+                        <a class="nounderline" href="">New</a>
+                        <a class="nounderline" href="">Popular</a>
+                        <a class="nounderline" href="">Business & Economics</a>
+                        <a class="nounderline" href="">Self-Help</a>
+                        <a class="nounderline" href="">Politics</a>
+                        <a class="nounderline" href="">The New York Times</a>
+                        <a class="nounderline" href="">Harvard Business Review</a>
+                        <a class="nounderline" href="">Instaread Originals</a>
+                        <a class="nounderline" href="">Health & Fitness</a>
+                        <a class="nounderline" href="">Fiction</a>
+                        <a class="nounderline" href="">Daily Insights</a>
+                        <a class="nounderline" href="">Science</a>
+                        <a class="nounderline" href="">Religion</a>
+                        <a class="nounderline" href="">Sports & Recreation</a>
+                        <a class="nounderline" href="">Biographies</a>
+                    </div>
+                </div>
+                <div class="footer-center">
+                    <h4>Company</h4>
+                    <div class="footer-list">
+                        <a class="nounderline" href="">Help & Contact</a>
+                        <a class="nounderline" href="">Teams</a>
+                        <a class="nounderline" href="">Articles</a>
+                        <a class="nounderline" href="">The Nugget</a>
+                        <a class="nounderline" href="">Subscription FAQs</a>
+                    </div>
+                </div>
+                <div class="footer-center-mobile clear-margin-top">
+                    <div class="footer_abc"></div>
+                    <div id="categories-expandable" class="footer-expand clear-margin-top">
+                        <h4>Categories</h4><i id="category-icon" class="expand-icon material-icons clear-margin-top">add</i></div>
+                    <div id="categories-list" style="display: none;">
+                        <div class="footer-list">
+                            <a class="nounderline" href="">New</a>
+                            <a class="nounderline" href="">Popular</a>
+                            <a class="nounderline" href="">Business & Economics</a>
+                            <a class="nounderline" href="">Self-Help</a>
+                            <a class="nounderline" href="">Politics</a>
+                            <a class="nounderline" href="">The New York Times</a>
+                            <a class="nounderline" href="">Harvard Business Review</a>
+                            <a class="nounderline" href="">Instaread Originals</a>
+                            <a class="nounderline" href="">Health & Fitness</a>
+                            <a class="nounderline" href="">Fiction</a>
+                            <a class="nounderline" href="">Daily Insights</a>
+                            <a class="nounderline" href="">Science</a>
+                            <a class="nounderline" href="">Religion</a>
+                            <a class="nounderline" href="">Sports & Recreation</a>
+                            <a class="nounderline" href="">Biographies</a>
+                        </div>
+                    </div>
+                    <div class="footer_abc"></div>
+                </div>
+                <div class="footer-center-mobile clear-margin-top">
+                    <div id="company-expandable" class="footer-expand">
+                        <h4>Company</h4><i id="company-icon" class="expand-icon material-icons clear-margin-top">add</i></div>
+                    <div id="company-list" style="display: none;">
+                        <div class="footer-list">
+                            <a class="nounderline" href="">Help & Contact</a>
+                            <a class="nounderline" href="">Teams</a>
+                            <a class="nounderline" href="">Articles</a>
+                            <a class="nounderline" href="">The Nugget</a>
+                            <a class="nounderline" href="">Subscription FAQs</a>
+                        </div>
+                    </div>
+                    <div class="footer_abc"></div>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-icons">
+                        <div class="footer-circular-icon clear-margin-top">
+                            <button class="footer-button" onclick="trackSMClick('twitter')">
+                            <div class="footercircle">
+                                <div id="track-twitter" class="footercircle-button"></div>
+                                <i class="footer-icon clear-margin-top fa fa-twitter"></i>
+                            </div>
+                        </button>
+                        </div>
+                        <div class="footer-circular-icon clear-margin-top">
+                            <button class="footer-button" onclick="trackSMClick('facebook')">
+                            <div class="footercircle">
+                                <div id="track-facebook" class="footercircle-button"></div>
+                                <i class="footer-icon clear-margin-top fa fa-facebook-square"></i>
+                            </div>
+                        </button>
+                        </div>
+                        <div class="footer-circular-icon clear-margin-top">
+                            <button class="footer-button" onclick="trackSMClick('instagram')">
+                            <div class="footercircle">
+                                <div id="track-instagram" class="footercircle-button"></div>
+                                <i class="footer-icon clear-margin-top fa fa-instagram"></i>
+                            </div>
+                        </button>
+                        </div>
+                    </div>
+                    <div id="apple-store-link" class="app-links">
+                        <a id="track-apple-store" class="apple-badge" onclick="return trackBadgeClick('apple_store')" href="" style="background:url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2015-11-27&kind=iossoftware&bubble=ios_apps) no-repeat;"></a>
+                    </div>
+                    <div id="google-play-store-link" class="app-links">
+                        <a id="track-google-store" class="google-playstore-badge" onclick="return trackBadgeClick('google_store')" href=''><img class="badge-img" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' /></a>
+                    </div>
+                </div>
+                <div class="copyright-mobile">
+                    <div class="footer-terms">
+                        <a class="nounderline" href="" target="_blank">Terms of Service</a>&nbsp&nbsp|&nbsp&nbsp<a class="nounderline" href="" target="_blank">Privacy Policy</a>
+                    </div>
+                    <span id="contact_copyright">© Instaread 2020. All rights reserved</span>
+                </div>
+                <script>
+                    $("#categories-expandable").click(function() {
+                        var expandDiv = $("#categories-list");
+                        expandDiv.slideToggle(500, function() {
+                            if ($(this).is(':visible')) {
+                                $("#category-icon").html("remove");
+                            } else {
+                                $("#category-icon").html("add");
+                            }
+                        })
+                    })
+                    $("#company-expandable").click(function() {
+                        var expandDiv = $("#company-list");
+                        expandDiv.slideToggle(500, function() {
+                            if ($(this).is(':visible')) {
+                                $("#company-icon").html("remove");
+                            } else {
+                                $("#company-icon").html("add");
+                            }
+                        })
+                    })
+
+                    function trackSMClick(source) {
+                        switch (source) {
+                            case "twitter":
+                                mixpanel.track("Click Footer SM", {
+                                    "sm_source": source
+                                });
+                                window.location.href = '';
+                                break;
+                            case "facebook":
+                                mixpanel.track("Click Footer SM", {
+                                    "sm_source": source
+                                });
+                                window.location.href = '';
+                                break;
+                            case "instagram":
+                                mixpanel.track("Click Footer SM", {
+                                    "sm_source": source
+                                });
+                                window.location.href = '';
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    function trackBadgeClick(source) {
+                        switch (source) {
+                            case "apple_store":
+                                mixpanel.track("Click Footer App Badge", {
+                                    "sm_source": source
+                                });
+                                break;
+                            case "google_store":
+                                mixpanel.track("Click Footer App Badge", {
+                                    "sm_source": source
+                                });
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                </script>
+            </footer>
+        </div>
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "WebSite",
+                "url": "https://instaread.co",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://instaread.co/search?query={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            }
+        </script>
+        <script>
+            $(':required').one('blur', function() {
+                $(this).addClass('touched');
+            });
+        </script>
+
+        <script>
+            ! function(f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function() {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = '2.0';
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window,
+                document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('set', 'autoConfig', false, '562429777277043');
+            fbq('init', '562429777277043');
+            fbq('track', 'PageView');
+        </script>
+        <script type="text/javascript">
+            mixpanel.identify("h2w2k5nvekresii");
+            //mixpanel.track("Web Page View");
+            mixpanel.people.set("LastActive", new Date());
+        </script>
+        <script type='text/javascript'>
+            window._tfa = window._tfa || [];
+            window._tfa.push({
+                notify: 'event',
+                name: 'page_view'
+            });
+            ! function(t, f, a, x) {
+                if (!document.getElementById(x)) {
+                    t.async = 1;
+                    t.src = a;
+                    t.id = x;
+                    f.parentNode.insertBefore(t, f);
+                }
+            }(document.createElement('script'),
+                document.getElementsByTagName('script')[0],
+                '//cdn.taboola.com/libtrc/unip/1145763/tfa.js',
+                'tb_tfa_script');
+        </script>
+        <script src="https://www.dwin1.com/16824.js" type="text/javascript" defer="defer">
+        </script>
+        <script>
+        </script>
+</body>
+
+</html>
